@@ -94,7 +94,7 @@ class SkillsController extends Controller
             'body' => 'required'
         ]);
 
-              // Create Skill
+        // Create Skill
         $skill = new Skills;
         $skill->skill_name = $request->input('skill_name');
 
@@ -121,5 +121,10 @@ class SkillsController extends Controller
 
         $skill->delete();
         return redirect('/skills')->with('success', 'Skill Removed');
+    }
+
+    public static function skills_count(){
+        $counts = skills::count();
+        print($counts);
     }
 }

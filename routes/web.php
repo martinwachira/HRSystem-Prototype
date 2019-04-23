@@ -28,6 +28,11 @@ Route::get('/role', function () {
 });
 
 Route::resource('skills', 'SkillsController');
+//Route::get('/skillcount','SkillsController@skills_count');
+
+
+
+
 
 Auth::routes();
 

@@ -1,4 +1,3 @@
-
 {{--@extends('layouts.app')--}}
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -22,19 +21,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<br/>
 
+<br/>
 <div class="card-body">
     <h1 style="margin-left: 250px">Add Skills</h1>
-    {{--    {!! Form::open(['action'=>['SkillsController@store', 'method'=>'POST', 'enctype' => 'multipart/form-data']) !!}--}}
-    {{--    {!! Form::open(['action' => 'SkillsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}--}}
-    {{--<div class="form-group row" >--}}
-    {{--{{Form::label('name', 'Skill Name: ',['class'=>' col-form-label text-md-right'])}} &nbsp;--}}
-    {{--{{Form::text('skill_name','',['class'=>'form-control col-md-4','placeholder'=>'Name'])}}--}}
-    {{--</div>--}}
-    {{--{{Form::submit('Submit',['class'=>'btn btn-primary '])}}--}}
-    {{--{!! Form::close() !!}--}}
-    {{--<form method="POST" action="SkillsController@store">--}}
+
     {!! Form::open(['action' => 'SkillsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
     @csrf
 
@@ -62,4 +53,5 @@
     </form>
 </div>
 </body>
+
 </html>

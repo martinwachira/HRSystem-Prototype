@@ -372,89 +372,76 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="active"><a href="index.html"><i class=""></i>Employees</a></li>
-                        <li><a href="index2.html"><i class=""></i>Services</a></li>
+                        <li class="active"><a href="index.html"><i class=""></i>Employee Salary</a></li>
+                        <li><a href="index2.html"><i class=""></i>Payslip</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-files-o"></i>
-                        <span>Leaves </span>
+                        <i class="fa fa-user-circle"></i>
+                        <span>Users </span>
                         <span class="pull-right-container">
               <span class="label label-primary pull-right">4</span>
             </span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                        <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                        <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                        <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-                    </ul>
                 </li>
                 <li>
-                    <a href="skills/create">
+                    {{--<a href="skills/create">--}}
+                     <a href="{{'skills/create'}}">
                         <i class="fa fa-th"></i> <span>Skills</span>
                         <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
+              <small class="label pull-right bg-green">New</small>
             </span>
                     </a>
                 </li>
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-pie-chart"></i>
+                        <i class="fa fa-user"></i>
                         <span>Employees</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="pages/charts/flot.html"><i class=""></i> View Employees</a></li>
-                        <li><a href="pages/charts/inline.html"><i class=""></i>Delete Employees</a></li>
+                        <li><a href="pages/charts/flot.html"><i class=""></i> All Employees</a></li>
+                        <li><a href="pages/charts/inline.html"><i class=""></i>Leave Requests</a></li>
+                        <li><a href="pages/charts/inline.html"><i class=""></i>Attendance</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-laptop"></i>
                         <span>Roles</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+                        <small class="label pull-right bg-green">Add</small>
             </span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="pages/UI/general.html"><i class=""></i> Add</a></li>
-                        <li><a href="pages/UI/icons.html"><i class=""></i> Edit</a></li>
-                        <li><a href="pages/UI/buttons.html"><i class=""></i> Delete</a></li>
-                        <li><a href="pages/UI/sliders.html"><i class=""></i> View</a></li>
-                        {{--<li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>--}}
-                        {{--<li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>--}}
-                    </ul>
                 </li>
+
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-edit"></i> <span>Users</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                        <i class="ion ion-stats-bars"></i>
+                        <span>Tasks</span>
+                        </span>
                     </a>
-                    <ul class="treeview-menu">
-                        <li><a href="pages/forms/general.html"><i class=" "></i>Add</a></li>
-                        <li><a href="pages/forms/advanced.html"><i class=""></i>Edit</a></li>
-                        <li><a href="pages/forms/editors.html"><i class=""></i>Delete</a></li>
-                        <li><a href="pages/forms/editors.html"><i class=""></i>Assign Roles</a></li>
-                    </ul>
                 </li>
+
                 <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-table"></i> <span>Tables</span>
+                        <i class="fa fa-bank"></i> <span>Accounts</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                        <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+                        <li><a href="pages/forms/general.html"><i class=" "></i>Estimates</a></li>
+                        <li><a href="pages/forms/advanced.html"><i class=""></i>Invoices</a></li>
+                        <li><a href="pages/forms/editors.html"><i class=""></i>Payments</a></li>
+                        <li><a href="pages/forms/editors.html"><i class=""></i>Expenses</a></li>
+                        <li><a href="pages/forms/editors.html"><i class=""></i>Retirement Pension</a></li>
+                        <li><a href="pages/forms/editors.html"><i class=""></i>Taxes</a></li>
                     </ul>
                 </li>
+
                 <li>
                     <a href="pages/calendar.html">
                         <i class="fa fa-calendar"></i> <span>Calendar</span>
@@ -474,25 +461,7 @@
             </span>
                     </a>
                 </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-folder"></i> <span>Examples</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-                        <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-                        <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-                        <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-                        <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-                        <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-                        <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-                        <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-                        <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
-                    </ul>
-                </li>
+
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-share"></i> <span>Multilevel</span>
@@ -556,31 +525,30 @@
             <div class="row">
                 <div class="col-lg-3 col-xs-6">
                     <!-- small box -->
-                    <div class="small-box bg-aqua">
+                    <div class="small-box bg-green">
                         <div class="inner">
-                            <h3>150</h3>
-
-                            <p>New Orders</p>
+                            <h3>53</h3>
+                            <p>All Tasks</p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-bag"></i>
+                            <i class="ion ion-stats-bars"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="#" class="small-box-footer">Tasks <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
                 <div class="col-lg-3 col-xs-6">
                     <!-- small box -->
-                    <div class="small-box bg-green">
+                    <div class="small-box bg-aqua">
                         <div class="inner">
-                            <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                            <p>Bounce Rate</p>
+                            <h3 >{{ \App\Http\Controllers\SkillsController::skills_count() }}</h3>
+                            {{--<p> <a href="skills">View Skills</a></p>--}}
+                            <p> <a href="{{'skills'}}">View Skills</a></p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
+                            <i class="ion ion-bag"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="{{'skills'}}" class="small-box-footer">Skills <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -590,12 +558,12 @@
                         <div class="inner">
                             <h3>44</h3>
 
-                            <p>User Registrations</p>
+                            <p>All User</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="#" class="small-box-footer">Users <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -605,7 +573,7 @@
                         <div class="inner">
                             <h3>65</h3>
 
-                            <p>Unique Visitors</p>
+                            <p>Timing Sheet</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
@@ -1060,7 +1028,7 @@
         <div class="pull-right hidden-xs">
             <b>Version</b> 2.4.0
         </div>
-        <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+        <strong>Copyright &copy; 2019 <a href="https://adminlte.io">WcR HR</a>.</strong> All rights
         reserved.
     </footer>
 
