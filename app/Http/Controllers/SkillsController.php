@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Skills;
 use DB;
+
+
 class SkillsController extends Controller
 {
     /**
@@ -15,6 +17,11 @@ class SkillsController extends Controller
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
+
+    public function skills()
+    {
+        return view('skills.index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +29,8 @@ class SkillsController extends Controller
      */
     public function index()
     {
-          $skills = Skills::orderBy('created_at','desc')->paginate(10);
+        $skills = Skills::orderBy('created_at','desc')->paginate(10);
+//        $skills = Skills::all();
         return view('skills.index')->with('skills', $skills);
     }
     /**

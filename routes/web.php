@@ -23,22 +23,30 @@ Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('/role', function () {
-    return view('create_role');
+Route::get('/users', function () {
+    return view('auth/register');
 });
 
+//Route::get('/role', function () {
+//    return view('create_role');
+//});
+
 Route::resource('skills', 'SkillsController');
-//Route::get('/skillcount','SkillsController@skills_count');
+Route::resource('roles', 'RolesController');
 
-
-
-
+Route::get('/skills', 'SkillsController@index');
+Route::get('/roles','RolesController@index');
+//Route::get('/users','Auth\RegisterController@auth\register');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@administrator')->name('administrator');
-
+Route::get('/skills', 'SkillsController@skills')->name('skills');
+Route::get('/roles', 'RolesController@roles')->name('roles');
+Route::get('/skills', 'SkillsController@index');
+Route::get('/roles','RolesController@index');
+//Route::get('/users','Auth\UsersController@users');
 
 
 

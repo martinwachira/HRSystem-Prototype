@@ -30,7 +30,7 @@
     <h1 class="col-md-4">{{$skill->skill_name}}</h1>
     {{--<img style="width:100%" src="/storage/cover_images/{{$post->cover_image}}">--}}
 {{--    <small>Written on {{$skills->created_at}} by {{$skills->user->name}}</small>--}}
-    <small class="col-md-4 col-form-label text-md-right">Written on {{$skill->created_at}}</small>
+    <small class="col-md-4 col-form-label text-md-right">Created on {{$skill->created_at}}</small>
     <hr>
 {{--    @if(!Auth::guest())--}}
 {{--        @if(Auth::user()->id == $skills->user_id)--}}

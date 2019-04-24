@@ -16,10 +16,10 @@
             </div>
         @endforeach
 
-        {{$skills->links()}}
+        {{--{{$skills->links()}}--}}
 
-        <a href="/admin" class="btn btn-default">Go Back</a>
+        <a href="{{url()->previous()}}">Go Back</a>
     @else
-        <p>No skills found</p>  
+        <p>No skills found</p>
     @endif
 @endsection

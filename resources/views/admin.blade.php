@@ -376,21 +376,20 @@
                         <li><a href="index2.html"><i class=""></i>Payslip</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
-                    <a href="#">
+                <li>
+                    <a href="{{ 'users' }}">
+{{--                        <a href="{{ url('/register') }}">--}}
                         <i class="fa fa-user-circle"></i>
                         <span>Users </span>
-                        <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
-            </span>
+                        {{--<span class="pull-right-container">--}}
+              {{--<span class="fa fa-edit"></span>--}}
+            {{--</span>--}}
                     </a>
                 </li>
                 <li>
-                    {{--<a href="skills/create">--}}
                      <a href="{{'skills/create'}}">
                         <i class="fa fa-th"></i> <span>Skills</span>
                         <span class="pull-right-container">
-              <small class="label pull-right bg-green">New</small>
             </span>
                     </a>
                 </li>
@@ -408,8 +407,8 @@
                         <li><a href="pages/charts/inline.html"><i class=""></i>Attendance</a></li>
                     </ul>
                 </li>
-                <li class="treeview">
-                    <a href="#">
+                <li>
+                    <a href="{{'roles'}}">
                         <i class="fa fa-laptop"></i>
                         <span>Roles</span>
                         <small class="label pull-right bg-green">Add</small>
@@ -556,7 +555,7 @@
                     <!-- small box -->
                     <div class="small-box bg-yellow">
                         <div class="inner">
-                            <h3>44</h3>
+                            <h3 >{{ \App\Http\Controllers\auth\RegisterController::userCount() }}</h3>
 
                             <p>All User</p>
                         </div>
