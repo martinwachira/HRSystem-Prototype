@@ -1,6 +1,6 @@
 
 @extends('layouts.app')
-
+<head>
 <link rel="stylesheet" href="{{ asset('materialize-admin/css/materialize.css') }}">
 {{--<link rel="stylesheet" href="{{ asset('materialize-admin/css/style.css') }}">--}}
 <link rel="stylesheet" href="{{ asset('materialize-admin/css/materialize.style.css') }}">
@@ -11,52 +11,6 @@
 <script src="{{ asset('materialize-admin/js/materialize.js') }}"></script>
 <script src="{{ asset('materialize-admin/js/materialize.min.js') }}"></script>
 <script src="{{ asset('materialize-admin/js/materialize.custom-script.min.js') }}"></script>
-
-@section('content')
-    <div class="container">
-
-        <div class="row">
-                &nbsp;&nbsp;&nbsp;
-            <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-primary">Add Skill</button>
-
-            <div id="id01" class="w3-modal">
-                <div class="w3-modal-content">
-                    <div class="w3-container">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-
-                    </div>
-                </div>
-            </div>
-
-          </div>
-
-        <table class="table table-bordered">
-            <thead class="table-dark">
-            <th>Name</th>
-            <th>Actions</th>
-            </thead>
-
-
-            <tbody class="table-primary">
-
-            @foreach($skills as $skill)
-
-                <tr>
-                    <td>{{$skill->skill_name}}</td>
-                    <td>Delete</td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
-
-    </div>
-
-@endsection
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<body>
 <div class="w3-container">
     {{--<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Click Me to open modal</button>--}}
 
@@ -65,7 +19,7 @@
             <div class="w3-container">
                 <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
                 <div class="card-body">
-                    <h1 style="margin-left: 250px">Add Skills</h1>
+                    <h1>Add Skill</h1>
 
                     {!! Form::open(['action' => 'SkillsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                     @csrf
@@ -97,5 +51,53 @@
         </div>
     </div>
 </div>
+</head>
+
+@section('content')
+<div class="container">
+
+        <div class="row">
+                &nbsp;&nbsp;&nbsp;
+            <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-primary">Add Skill</button>
+
+            <div id="id01" class="w3-modal">
+                <div class="w3-modal-content">
+                    <div class="w3-container">
+
+                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+
+                    </div>
+                </div>
+            </div>
+
+          </div>
+
+        <table class="table table-bordered">
+            <thead class="table-dark">
+            <th>Name</th>
+            <th>Actions</th>
+            </thead>
+
+
+            <tbody class="table-primary">
+
+            @foreach($skills as $skill)
+
+                <tr>
+                    <td>{{$skill->skill_name}}</td>
+                    <td><span class="ion-edit"> Edit</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="ion-alert">  Delete</span></td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+
+    </div>
+
+@endsection
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
 
 </body>
