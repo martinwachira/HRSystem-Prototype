@@ -46,6 +46,12 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+    public static function profile()
+    {
+        $user = User::all();
+        return view('users/index')->with(['users' => $user]);
+    }
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -87,8 +93,8 @@ class RegisterController extends Controller
 
 //    public function show($id)
 //    {
-//        $users = User::find($id);
-//        return view('skills.show')->with('skill', $skill);
+//        $user = User::find($id);
+//        return view('users.show')->with('user', $user);
 //    }
 
     public static function userCount(){

@@ -377,13 +377,15 @@
                     </ul>
                 </li>
                 <li>
+
                     <a href="{{ 'users' }}">
+
 {{--                        <a href="{{ url('/register') }}">--}}
                         <i class="fa fa-user-circle"></i>
                         <span>Users </span>
-                        {{--<span class="pull-right-container">--}}
-              {{--<span class="fa fa-edit"></span>--}}
-            {{--</span>--}}
+                        <span class="pull-right-container">
+              <span class="fa fa-edit"></span>
+            </span>
                     </a>
                 </li>
                 <li>
@@ -557,12 +559,12 @@
                         <div class="inner">
                             <h3 >{{ \App\Http\Controllers\auth\RegisterController::userCount() }}</h3>
 
-                            <p>All User</p>
+                            <p><a href="{{'users/show'}}">All Users</a></p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Users <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="{{'users/show'}}" class="small-box-footer">Users <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
