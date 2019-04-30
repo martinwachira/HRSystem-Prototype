@@ -38,10 +38,11 @@ Route::get('/users/show', function (){
 
 Route::resource('skills', 'SkillsController');
 Route::resource('roles', 'RolesController');
+//Route::resource('users','Auth\RegisterController');
+Route::resource('users','UsersController');
 
 Route::get('/skills', 'SkillsController@index');
 Route::get('/roles','RolesController@index');
-
 
 
 //Route::get('/users','Auth\RegisterController@profile');

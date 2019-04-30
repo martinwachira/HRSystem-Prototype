@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -61,6 +61,7 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:6', 'confirmed'],
             'gender' => 'required',
             'birth_date' => ['required', 'date', 'max:255'],
+            'role' => [],
 //            'notes' => ['required', 'string', 'max:255'],
 //            'gender' => 'in:male,female',
 //            'featured' => ['required', 'string', 'max:255'],
@@ -83,11 +84,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'gender' => $data['gender'],
             'birth_date' => $data['birth_date'],
-//            'notes' => $data['notes'],
-//            'male' => $data['male'],
-//            'female' => $data['female'],
-//            'featured' => $data['featured'],
-//            'how_did_they_hear' => $data['how_did_they_hear'],
+            'role' => 0,
         ]);
     }
 
@@ -96,6 +93,30 @@ class RegisterController extends Controller
 //        $user = User::find($id);
 //        return view('users.show')->with('user', $user);
 //    }
+
+
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('users.edit')->with('user', $user);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required'
+        ]);
+
+        $user = User::find($id);
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
+        $user->email = $request->input('email');
+
+        $user->save();
+        return redirect('/users')->with('success', 'User Updated');
+    }
 
     public static function userCount(){
         $all_users = User::count();

@@ -1,36 +1,23 @@
 @extends('layouts.app')
-
-
-{{--<link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">--}}
-{{--<!-- Font Awesome -->--}}
-{{--<link rel="stylesheet" href="{{ asset('bower_components/font-awesome/css/font-awesome.min.css') }}">--}}
-{{--<!-- Ionicons -->--}}
-{{--<link rel="stylesheet" href="{{ asset('bower_components/Ionicons/css/ionicons.min.css') }}">--}}
-{{--<!-- Theme style -->--}}
-{{--<link rel="stylesheet" href="{{ asset('bower_components/admin-lte/dist/css/AdminLTE.min.css') }}">--}}
-{{--<!-- AdminLTE Skins. Choose a skin from the css/skins--}}
-     {{--folder instead of downloading all of them to reduce the load. -->--}}
-{{--<link rel="stylesheet" href="{{ asset('bower_components/admin-lte/dist/css/skins/_all-skins.min.css') }}">--}}
-{{--<!-- Morris chart -->--}}
-{{--<link rel="stylesheet" href="{{ asset('bower_components/morris.js/morris.css') }}">--}}
-{{--<!-- jvectormap -->--}}
-{{--<link rel="stylesheet" href="{{ asset('bower_components/jvectormap/jquery-jvectormap.css') }}">--}}
-{{--<!-- Date Picker -->--}}
-{{--<link rel="stylesheet" href="{{ asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">--}}
-{{--<!-- Daterange picker -->--}}
-{{--<link rel="stylesheet" href="{{ asset('bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">--}}
-{{--<!-- bootstrap wysihtml5 - text editor -->--}}
-{{--<link rel="stylesheet" href="{{ asset('bower_components/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">--}}
-
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
 @section('content')
-    <div class="container">
+ <head>
+<link rel="stylesheet" href="{{ asset('materialize-admin/css/materialize.css') }}">
+{{--<link rel="stylesheet" href="{{ asset('materialize-admin/css/style.css') }}">--}}
+<link rel="stylesheet" href="{{ asset('materialize-admin/css/materialize.style.css') }}">
+<link rel="stylesheet" href="{{ asset('materialize-admin/css/materialize.custom.css') }}">
+
+<script src="{{ asset('materialize-admin/js/materialize.js') }}"></script>
+<script src="{{ asset('materialize-admin/js/materialize.min.js') }}"></script>
+<script src="{{ asset('materialize-admin/js/materialize.custom-script.min.js') }}"></script>
+
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+ </head>
+
+ <div class="container">
         <h2><a href="{{'../admin'}}">Users</a></h2>
         <table class="table table-bordered">
             <thead class="table-dark">
-            <th>Id</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
@@ -40,18 +27,34 @@
 
             <tbody class="table-primary">
 
+            @if(count($users) > 0)
+
             @foreach($users as $user)
 
             <tr>
-            <td>{{$user->id}}</td>
             <td>{{$user->first_name}}</td>
             <td>{{$user->last_name}}</td>
             <td>{{$user->email}}</td>
-                <td><span class="ion-edit"><a href="/users/{{$user->id}}/edit"> Edit</a></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="ion-alert">  Delete</span></td>
+            {{--<td><span class="ion-edit"><a href="/users/{{$user->id}}/edit"> Edit</a></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="ion-alert">  Delete</span></td>--}}
+             <td><a style="color:green" href="/users/{{$user->id}}/edit" >
+                        {!!Form::open(['onsubmit'=>"return confirm('Are you sure you want to delete this Account?')", 'action' => ['UsersController@destroy', $user->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                        <span class="ion-edit" > Edit</span></a>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+
+                    <span class="ion-alert">
+                                    {{Form::hidden('_method', 'DELETE')}}
+                        {{Form::submit('Delete', ['class' => 'btn-danger'])}}
+                        {!!Form::close()!!}
+                     </span>
+             </td>
             </tr>
             @endforeach
+{{--            {{$users->links()}}--}}
             </tbody>
         </table>
+        @else
+            <p>No users found</p>
+        @endif
     </div>
 
 @endsection
+

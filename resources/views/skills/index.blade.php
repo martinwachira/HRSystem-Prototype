@@ -87,7 +87,7 @@
                             <td>{{$skill->skill_name}}</td>
 
                             <td><a style="color:green" href="/skills/{{$skill['id']}}/edit" >
-                                {!!Form::open(['action' => ['SkillsController@destroy', $skill['id']], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                                {!!Form::open(['onsubmit' => "return confirm('Do you really want to remove this skill?')",'action' => ['SkillsController@destroy', $skill['id']], 'method' => 'POST', 'class' => 'pull-right'])!!}
                                 <span class="ion-edit" > Edit</span></a>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
 
                                 <span class="ion-alert">

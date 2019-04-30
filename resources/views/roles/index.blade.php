@@ -24,7 +24,7 @@
 <body>
 
 <br/>
-<div class="card-body">
+<div class="container">
     <h1 style="margin-left: 250px"><a href="{{"admin"}}">Roles</a></h1>
 
     {!! Form::open(['action' => 'RolesController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
@@ -54,28 +54,42 @@
     </form>
 
 
-</div>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+    <th>Name</th>
+    <th>Actions</th>
+    </thead>
+
+
+    <tbody class="table-primary">
+
     @if(count($roles) > 0)
         @foreach($roles as $role)
-            <div class="well">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4">
-                    </div>
-                    <div class="col-md-8 col-sm-8">
-                        <h3><a href="/roles/{{$role->role_id}}">{{$role->role_name}}</a></h3>
-                        <small>Added on {{$role->created_at}}</small>
-                    </div>
-                </div>
-            </div>
-        @endforeach
 
+            <tr>
+                <td>{{$role->role_name}}</td>
+
+                <td><a style="color:green" href="/roles/{{$role['role_id']}}/edit" >
+                        {!!Form::open(['onsubmit' => "return confirm('Do you really want to remove this skill?')",'action' => ['RolesController@destroy', $role['role_id']], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                        <span class="ion-edit" > Edit</span></a>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+
+                    <span class="ion-alert">
+                                    {{Form::hidden('_method', 'DELETE')}}
+                        {{Form::submit('Delete', ['class' => 'btn-danger'])}}
+                        {!!Form::close()!!}
+                                </span></td>
+            </tr>
+        @endforeach
         {{$roles->links()}}
+    </tbody>
+</table>
 
     @else
         <p>Roles not Found</p>
     @endif
 @endsection
-
+</div>
 
 </body>
 

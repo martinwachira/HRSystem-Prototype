@@ -20,7 +20,7 @@ class RolesController extends Controller
 
     public function roles()
     {
-        return view('roles.index');
+        return view('roles.show');
     }
 
     public function index()
@@ -66,7 +66,7 @@ class RolesController extends Controller
     public function show($role_id)
     {
         $role = Roles::find($role_id);
-        return view('roles.index')->with('role', $role);
+        return view('roles')->with('role', $role);
     }
 
     /**
@@ -77,7 +77,8 @@ class RolesController extends Controller
      */
     public function edit($role_id)
     {
-        //
+        $role = Roles::find($role_id);
+        return view('roles.edit')->with('role', $role);
     }
 
     /**
@@ -89,7 +90,15 @@ class RolesController extends Controller
      */
     public function update(Request $request, $role_id)
     {
-        //
+        $this->validate($request, [
+            'role_name' => 'required'
+        ]);
+
+        $role = Roles::find($role_id);
+        $role->role_name = $request->input('role_name');
+
+        $role->save();
+        return redirect('/roles')->with('success', 'Role Updated');
     }
 
     /**
@@ -100,6 +109,8 @@ class RolesController extends Controller
      */
     public function destroy($role_id)
     {
-        //
+        $role = Roles::find($role_id);
+        $role->delete();
+        return redirect('/roles')->with('success', 'Role Removed');
     }
 }
