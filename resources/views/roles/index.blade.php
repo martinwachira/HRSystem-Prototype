@@ -25,7 +25,7 @@
 
 <br/>
 <div class="card-body">
-    <h1 style="margin-left: 250px">Add Role</h1>
+    <h1 style="margin-left: 250px"><a href="{{"admin"}}">Roles</a></h1>
 
     {!! Form::open(['action' => 'RolesController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
     @csrf
@@ -69,10 +69,8 @@
             </div>
         @endforeach
 
-        {{--{{$skills->links()}}--}}
+        {{$roles->links()}}
 
-
-                <a href="/admin" class="btn btn-default">Go Back</a>
     @else
         <p>Roles not Found</p>
     @endif

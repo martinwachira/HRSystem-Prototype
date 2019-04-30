@@ -27,6 +27,11 @@ Route::get('/users', function () {
     return view('users/index');
 });
 
+Route::get('/users/show', function (){
+    $users = DB::table('users')->select('id','first_name','last_name','email')->get();
+    return view('users/show', compact('users'));
+});
+
 //Route::get('/role', function () {
 //    return view('create_role');
 //});
@@ -37,10 +42,6 @@ Route::resource('roles', 'RolesController');
 Route::get('/skills', 'SkillsController@index');
 Route::get('/roles','RolesController@index');
 
-Route::get('/users/show', function (){
-    $users = DB::table('users')->select('id','first_name','last_name','email')->get();
-    return view('users/show', compact('users'));
-});
 
 
 //Route::get('/users','Auth\RegisterController@profile');

@@ -98,23 +98,18 @@ class SkillsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required',
-            'body' => 'required'
+            'skill_name' => 'required'
         ]);
 
         // Create Skill
-        $skill = new Skills;
+        $skill = Skills::find($id);
+//        $skill = new Skills;
         $skill->skill_name = $request->input('skill_name');
 
         $skill->save();
         return redirect('/skills')->with('success', 'Skill Updated');
     }
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         $skill = Skills::find($id);

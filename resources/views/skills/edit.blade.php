@@ -24,23 +24,26 @@
 <body>
 <br/>
 
-<div class="card-body">
+<div class="card-body offset-md-3">
 {{--@section('content')--}}
     <h1  style="margin-left: 10px">Edit Skill</h1>
-    {!! Form::open(['action' => ['SkillsController@update', $skill->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+    {!! Form::open(['action' => ['SkillsController@update', $skill['id']], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
 
     <div class="form-group col-md-6">
         {{Form::label('name', 'Skill Name: ',['class'=>' col-form-label text-md-right'])}}
-        {{Form::text('skill_name', $skill->skill_name, ['class' => 'form-control'])}}
+        {{Form::text('skill_name', $skill['skill_name'], ['class' => 'form-control'])}}
     </div>
 
     {{Form::hidden('_method','PUT')}}
     &nbsp;&nbsp;&nbsp;&nbsp;
-    {{Form::submit('Edit', ['class'=>'btn btn-primary'])}}
+    {{Form::submit('Edit', ['class'=>'btn btn-primary '])}}
     {!! Form::close() !!}
+<a href="/skills" class="btn btn-default">Go Back</a>
 </div>
 {{--@endsection--}}
-<a href="/skills" class="btn btn-default">Go Back</a>
 
 </body>
 </html>
+
+
+

@@ -47,7 +47,7 @@
             <td>{{$user->first_name}}</td>
             <td>{{$user->last_name}}</td>
             <td>{{$user->email}}</td>
-                <td><span class="ion-edit"><a href="{{'skills/edit'}}"> Edit</a></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="ion-alert">  Delete</span></td>
+                <td><span class="ion-edit"><a href="/users/{{$user->id}}/edit"> Edit</a></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="ion-alert">  Delete</span></td>
             </tr>
             @endforeach
             </tbody>
