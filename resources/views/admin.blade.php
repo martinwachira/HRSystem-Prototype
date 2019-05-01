@@ -389,7 +389,7 @@
                     </a>
                 </li>
                 <li>
-                     <a href="{{'skills/create'}}">
+                     <a href="{{'skills'}}">
                         <i class="fa fa-th"></i> <span>Skills</span>
                         <span class="pull-right-container">
             </span>

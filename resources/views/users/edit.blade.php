@@ -30,6 +30,7 @@
     {!! Form::open(['action' => ['UsersController@update', $user['id']], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
 
     <div class="form-group col-md-6">
+
         {{Form::label('name', 'Given Name: ',['class'=>' col-form-label text-md-right'])}}
         {{Form::text('first_name', $user['first_name'], ['class' => 'form-control'])}}
         {{Form::label('name', 'Last Name: ',['class'=>' col-form-label text-md-right'])}}
@@ -46,6 +47,14 @@
         {{--{{Form::select('email', $user['email'], ['class' => 'form-control'])}}--}}
             {{--@endforeach--}}
             {{--@endif--}}
+        {{Form::label('name', 'Role: ',['class'=>' col-form-label text-md-right'])}}
+        <select name='role_id' class="form-control">
+            <option value="" selected="selected">Select A Role</option>
+            {{--@foreach($roles as $id => $role)--}}
+{{--                <option value="{!! $id !!}">{!! $role->role !!}</option>--}}
+            <option value="}">ttt</option>
+            {{--@endforeach--}}
+        </select>
     </div>
 
     {{Form::hidden('_method','PUT')}}
