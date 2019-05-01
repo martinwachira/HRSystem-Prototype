@@ -27,7 +27,7 @@
 <div class="card-body offset-md-3">
     {{--@section('content')--}}
     <h1  style="margin-left: 10px">Edit Role</h1>
-    {!! Form::open(['action' => ['RolesController@update', $role['role_id']], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+    {!! Form::open(['action' => ['RolesController@update', $role['id']], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
 
     <div class="form-group col-md-6">
         {{Form::label('name', 'Role Name: ',['class'=>' col-form-label text-md-right'])}}

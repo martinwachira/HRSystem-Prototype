@@ -48,7 +48,7 @@
             {{--@endforeach--}}
             {{--@endif--}}
         {{Form::label('name', 'Role: ',['class'=>' col-form-label text-md-right'])}}
-        <select name='role_id' class="form-control">
+        <select name='id' class="form-control">
             <option value="" selected="selected">Select A Role</option>
             {{--@foreach($roles as $id => $role)--}}
 {{--                <option value="{!! $id !!}">{!! $role->role !!}</option>--}}

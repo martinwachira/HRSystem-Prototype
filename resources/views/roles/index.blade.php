@@ -70,8 +70,8 @@
             <tr>
                 <td>{{$role->role_name}}</td>
 
-                <td><a style="color:green" href="/roles/{{$role['role_id']}}/edit" >
-                        {!!Form::open(['onsubmit' => "return confirm('Do you really want to remove this skill?')",'action' => ['RolesController@destroy', $role['role_id']], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                <td><a style="color:green" href="/roles/{{$role['id']}}/edit" >
+                        {!!Form::open(['onsubmit' => "return confirm('Do you really want to remove this skill?')",'action' => ['RolesController@destroy', $role['id']], 'method' => 'POST', 'class' => 'pull-right'])!!}
                         <span class="ion-edit" > Edit</span></a>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
 
                     <span class="ion-alert">

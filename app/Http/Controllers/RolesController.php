@@ -63,9 +63,9 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($role_id)
+    public function show($id)
     {
-        $role = Roles::find($role_id);
+        $role = Roles::find($id);
         return view('roles')->with('role', $role);
     }
 
@@ -75,9 +75,9 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($role_id)
+    public function edit($id)
     {
-        $role = Roles::find($role_id);
+        $role = Roles::find($id);
         return view('roles.edit')->with('role', $role);
     }
 
@@ -88,13 +88,13 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $role_id)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
             'role_name' => 'required'
         ]);
 
-        $role = Roles::find($role_id);
+        $role = Roles::find($id);
         $role->role_name = $request->input('role_name');
 
         $role->save();
@@ -107,9 +107,9 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($role_id)
+    public function destroy($id)
     {
-        $role = Roles::find($role_id);
+        $role = Roles::find($id);
         $role->delete();
         return redirect('/roles')->with('success', 'Role Removed');
     }
