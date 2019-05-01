@@ -79,6 +79,16 @@ class UsersTableSeeder extends Seeder
             'birth_date' => '2009-06-10',
         ]);
 
+        $user5 = User::create([
+            'first_name' => 'Ariana',
+            'last_name' => 'Grande',
+            'email' => 'ariana@ariana.com',
+            'password' => bcrypt('1234567'),
+            'role' => '0',
+            'gender' => 'f',
+            'birth_date' => '2003-10-10',
+        ]);
+
         $user = User::create([
         'first_name' => 'Dave',
         'last_name' => 'Mukungi',
@@ -95,6 +105,7 @@ class UsersTableSeeder extends Seeder
         $user2->roles()->attach($userRole);
         $user3->roles()->attach($userRole);
         $user4->roles()->attach($userRole);
+        $user5->roles()->attach($userRole);
         $admin->roles()->attach($adminRole);
         $super->roles()->attach($superRole);
 
