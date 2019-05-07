@@ -67,14 +67,6 @@
                             </div>
                         </div>
 
-                        {{--<div class="form-group row">--}}
-                            {{--<label for="role" class="col-md-4 col-form-label text-md-right" hidden>{{ __('Role') }}</label>--}}
-
-                            {{--<div class="col-md-6">--}}
-                                {{--<input id="role" type="text" class="form-control" name="role" hidden>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 

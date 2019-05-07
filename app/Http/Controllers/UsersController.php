@@ -1,8 +1,10 @@
 <?php
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\User;
+use App\Roles;
 use DB;
 
 class UsersController extends Controller
@@ -20,8 +22,16 @@ class UsersController extends Controller
 
     public function index()
     {
-        $users = User::orderBy('created_at','desc')->paginate(10);
-        return view('users.show')->with('users', $users);
+//        $user = User::find($id)
+//        return view('users.show')->with('user', $user);
+        $user = DB::table('users')
+            ->join('roles_user','roles_user.user_id','=','users.id')
+//            ->join('roles','roles.id','=','roles_user.roles_id')
+            ->select('users.*','roles_user.roles_id')
+            ->get();
+
+        return view('users.show')->with('user', $user);
+
     }
 
     /**
@@ -53,8 +63,15 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        return view('users.show')->with('user', $user);
+//        $user = User::find($id);
+//        return view('users.show')->with('user', $user);
+//        $user = DB::table('users')
+//            ->join('roles_user','roles_user.user_id','=','users.id')
+//            ->join('roles','roles.id','=','roles_user.roles_id')
+//            ->select('users.*','roles.role_name','roles_user.roles_id')
+//            ->get();
+
+//        return view('users.show')->with('user', $user);
     }
 
     /**
@@ -82,7 +99,6 @@ class UsersController extends Controller
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required'
-//            'birth_date' => 'required'
         ]);
 
         $user = User::find($id);
@@ -90,7 +106,6 @@ class UsersController extends Controller
         $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');
         $user->gender = $request->input('gender');
-//        $user->birth_date = $request->input('birth_date');
 
         $user->save();
         return redirect('/users/show')->with('success', 'User Updated');

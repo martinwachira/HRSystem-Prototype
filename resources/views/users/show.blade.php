@@ -21,6 +21,7 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
+            <th>Role</th>
             <th>Action</th>
             </thead>
 
@@ -35,7 +36,7 @@
             <td>{{$user->first_name}}</td>
             <td>{{$user->last_name}}</td>
             <td>{{$user->email}}</td>
-            {{--<td><span class="ion-edit"><a href="/users/{{$user->id}}/edit"> Edit</a></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span class="ion-alert">  Delete</span></td>--}}
+            <td>{{$user->role_name}}</td>
              <td><a style="color:green" href="/users/{{$user->id}}/edit" >
                         {!!Form::open(['onsubmit'=>"return confirm('Are you sure you want to delete this Account?')", 'action' => ['UsersController@destroy', $user->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
                         <span class="ion-edit" > Edit</span></a>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
@@ -46,7 +47,7 @@
                         {!!Form::close()!!}
                      </span>
              </td>
-            </tr>
+              </tr>
             @endforeach
 {{--            {{$users->links()}}--}}
             </tbody>

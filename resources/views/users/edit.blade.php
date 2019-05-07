@@ -40,21 +40,15 @@
         {{Form::label('name', 'Date of Birth: ',['class'=>' col-form-label text-md-right'])}}
         {{Form::date('birth_date', $user['birth_date'], ['class' => 'form-control'])}}
 
-        {{--@if(count($users) > 0)--}}
-
-            {{--@foreach($users as $user)--}}
-        {{--{{Form::label('roles','Role: ',['class'=>'col-form-label text-md-right'])}}--}}
-        {{--{{Form::select('email', $user['email'], ['class' => 'form-control'])}}--}}
-            {{--@endforeach--}}
-            {{--@endif--}}
         {{Form::label('name', 'Role: ',['class'=>' col-form-label text-md-right'])}}
-        <select name='id' class="form-control">
-            <option value="" selected="selected">Select A Role</option>
+        {{Form::text('role_name', $user['role_name'], ['class' => 'form-control'])}}
+        {{--<select name='id' class="form-control">--}}
+            {{--<option value="" selected="selected">Select A Role</option>--}}
             {{--@foreach($roles as $id => $role)--}}
-{{--                <option value="{!! $id !!}">{!! $role->role !!}</option>--}}
-            <option value="}">ttt</option>
+                {{--<option value="{!! $id !!}">{!! $role->role !!}</option>--}}
+            {{--<option value="}">ttt</option>--}}
             {{--@endforeach--}}
-        </select>
+        {{--</select>--}}
     </div>
 
     {{Form::hidden('_method','PUT')}}

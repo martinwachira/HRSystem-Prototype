@@ -27,8 +27,18 @@ Route::get('/users', function () {
     return view('users/index');
 });
 
+//Route::get('/users/show', function (){
+//    $users = DB::table('users')
+//        ->select('id','first_name','last_name','email')->get();
+//    return view('users/show', compact('users'));
+//});
+
 Route::get('/users/show', function (){
-    $users = DB::table('users')->select('id','first_name','last_name','email')->get();
+    $users = DB::table('users')
+        ->join('roles_user','roles_user.user_id','=','users.id')
+        ->join('roles','roles.id','=','roles_user.roles_id')
+        ->select('users.*','roles.role_name')
+        ->get();
     return view('users/show', compact('users'));
 });
 
