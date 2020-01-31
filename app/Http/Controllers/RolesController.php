@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Roles;
+use App\User;
 use DB;
 
 class RolesController extends Controller
@@ -99,6 +100,14 @@ class RolesController extends Controller
 
         $role->save();
         return redirect('/roles')->with('success', 'Role Updated');
+    }
+
+    public function assign(){
+
+        $users = User::orderBy('created_at','desc')->paginate(10);
+        $roles = Roles::orderBy('created_at','desc')->paginate(10);
+        // $roles = Roles::all();
+        return view('/roles.assign')->with( 'roles', $roles);
     }
 
     /**

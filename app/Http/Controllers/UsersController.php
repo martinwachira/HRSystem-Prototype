@@ -26,12 +26,11 @@ class UsersController extends Controller
 //        return view('users.show')->with('user', $user);
         $user = DB::table('users')
             ->join('roles_user','roles_user.user_id','=','users.id')
-//            ->join('roles','roles.id','=','roles_user.roles_id')
+            ->join('roles','roles.id','=','roles_user.roles_id')
             ->select('users.*','roles_user.roles_id')
             ->get();
 
-        return view('users.show')->with('user', $user);
-
+        return view('users.index')->with('user', $user);
     }
 
     /**
@@ -52,7 +51,28 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'gender' => 'required',
+            'birth_date' => 'required'
+//            'remember_token' => ''
+        ]);
+
+        $user = new User();
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
+        $user->email = $request->input('email');
+        $user->password = $request->input('password');
+        $user->gender = $request->input('gender');
+        $user->birth_date = $request->input('birth_date');
+//        $user->remember_token = $request->input('remember_token');
+
+//      $skill->user_id = auth()->user()->id;
+        $user->save();
+        return redirect('/users')->with('success', 'User Account Created');
     }
 
     /**
@@ -68,9 +88,9 @@ class UsersController extends Controller
 //        $user = DB::table('users')
 //            ->join('roles_user','roles_user.user_id','=','users.id')
 //            ->join('roles','roles.id','=','roles_user.roles_id')
-//            ->select('users.*','roles.role_name','roles_user.roles_id')
+//            ->select('users.*')
 //            ->get();
-
+//
 //        return view('users.show')->with('user', $user);
     }
 
@@ -82,23 +102,26 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
+
+        // $user = DB::table('users')
+        // ->join('roles_user','roles_user.user_id','=','users.id')
+        // ->join('roles','roles.id','=','roles_user.roles_id')
+        // ->select('users.*','roles.role_name')
+        // ->get();
+
         $user = User::find($id);
         return view('users.edit')->with('user', $user);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         $this->validate($request, [
             'first_name' => 'required',
             'last_name' => 'required',
-            'email' => 'required'
+            'email' => 'required',
+            'gender' => 'required'
+            // 'role_name' => 'required'
         ]);
 
         $user = User::find($id);
@@ -111,12 +134,6 @@ class UsersController extends Controller
         return redirect('/users/show')->with('success', 'User Updated');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $user = User::find($id);

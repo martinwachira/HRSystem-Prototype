@@ -30,7 +30,6 @@ class SkillsController extends Controller
     public function index()
     {
         $skills = Skills::orderBy('created_at','desc')->paginate(10);
-//        $skills = Skills::all();
         return view('skills.index')->with('skills', $skills);
     }
     /**
@@ -58,7 +57,6 @@ class SkillsController extends Controller
         // Create Skill
         $skill = new Skills;
         $skill->skill_name = $request->input('skill_name');
-//      $skill->user_id = auth()->user()->id;
         $skill->save();
         return redirect('/skills')->with('success', 'Skill Created');
     }
@@ -82,10 +80,6 @@ class SkillsController extends Controller
     public function edit($id)
     {
         $skill = Skills::find($id);
-        // Check for correct user
-//        if(auth()->user()->id !==$skill->user_id){
-//            return redirect('/skills')->with('error', 'Unauthorized Page');
-//        }
         return view('skills.edit')->with('skill', $skill);
     }
     /**

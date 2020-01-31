@@ -11,21 +11,21 @@ class CreateDisciplinaryCasesTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('disciplinary_cases', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name', 100);
-            $table->string('description');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')
-                ->references('id')
-                ->on('users')
-                ->onDelete('cascade');
-            $table->timestamps();
-            $table->softDeletes();
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::create('disciplinary_cases', function (Blueprint $table) {
+    //         $table->increments('id');
+    //         $table->string('name', 100);
+    //         $table->string('description');
+    //         $table->integer('user_id')->unsigned();
+    //         $table->foreign('user_id')
+    //             ->references('id')
+    //             ->on('users')
+    //             ->onDelete('cascade');
+    //         $table->timestamps();
+    //         $table->softDeletes();
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

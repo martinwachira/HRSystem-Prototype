@@ -11,15 +11,15 @@ class CreateTableCurrencies extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('currencies', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('currency_code', 5);
-            $table->string('currency_display', 10);
-            $table->timestamps();
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::create('currencies', function (Blueprint $table) {
+    //         $table->increments('id');
+    //         $table->string('currency_code', 5);
+    //         $table->string('currency_display', 10);
+    //         $table->timestamps();
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

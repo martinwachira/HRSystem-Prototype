@@ -46,11 +46,11 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    public static function profile()
-    {
-        $user = User::all();
-        return view('users/index')->with(['users' => $user]);
-    }
+    // public static function profile()
+    // {
+    //     $user = User::all();
+    //     return view('users/index')->with(['users' => $user]);
+    // }
 
     protected function validator(array $data)
     {
@@ -95,28 +95,28 @@ class RegisterController extends Controller
 //    }
 
 
-    public function edit($id)
-    {
-        $user = User::find($id);
-        return view('users.edit')->with('user', $user);
-    }
+//    public function edit($id)
+//    {
+//        $user = User::find($id);
+//        return view('users.edit')->with('user', $user);
+//    }
 
-    public function update(Request $request, $id)
-    {
-        $this->validate($request, [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required'
-        ]);
-
-        $user = User::find($id);
-        $user->first_name = $request->input('first_name');
-        $user->last_name = $request->input('last_name');
-        $user->email = $request->input('email');
-
-        $user->save();
-        return redirect('/users')->with('success', 'User Updated');
-    }
+//    public function update(Request $request, $id)
+//    {
+//        $this->validate($request, [
+//            'first_name' => 'required',
+//            'last_name' => 'required',
+//            'email' => 'required'
+//        ]);
+//
+//        $user = User::find($id);
+//        $user->first_name = $request->input('first_name');
+//        $user->last_name = $request->input('last_name');
+//        $user->email = $request->input('email');
+//
+//        $user->save();
+//        return redirect('/users')->with('success', 'User Updated');
+//    }
 
     public static function userCount(){
         $all_users = User::count();

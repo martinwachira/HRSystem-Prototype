@@ -11,12 +11,12 @@ class UpdateUsersAddNotes extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::table('users', function (Blueprint $table) {
-            $table->text('notes')->nullable()->after('birth_date');
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::table('users', function (Blueprint $table) {
+    //         $table->text('notes')->nullable()->after('birth_date');
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

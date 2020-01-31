@@ -11,12 +11,12 @@ class UpdateUsersTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::table('users', function (Blueprint $table) {
-            $table->tinyInteger('role')->after('password');
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::table('users', function (Blueprint $table) {
+    //         $table->tinyInteger('role')->after('password');
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

@@ -11,18 +11,18 @@ class CreateSalarySalaryComponentsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('salaries_salary_components', function (Blueprint $table) {
-            $table->increments('id');
-            $table->decimal('value', 8, 2);
-            $table->integer('salary_component_id')->unsigned();
-            $table->integer('salary_id')->unsigned();
-            $table->foreign('salary_component_id')->references('id')->on('salary_components')->onDelete('cascade');
-            $table->foreign('salary_id')->references('id')->on('salaries')->onDelete('cascade');
-            $table->timestamps();
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::create('salaries_salary_components', function (Blueprint $table) {
+    //         $table->increments('id');
+    //         $table->decimal('value', 8, 2);
+    //         $table->integer('salary_component_id')->unsigned();
+    //         $table->integer('salary_id')->unsigned();
+    //         $table->foreign('salary_component_id')->references('id')->on('salary_components')->onDelete('cascade');
+    //         $table->foreign('salary_id')->references('id')->on('salaries')->onDelete('cascade');
+    //         $table->timestamps();
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

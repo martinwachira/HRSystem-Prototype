@@ -44,13 +44,14 @@
     {{--<link rel="stylesheet" href="{{ asset('bower_components/admin-lte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">--}}
 
 </head>
-<body>
+<body style="margin-top:20px">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/admin') }}">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="background-color:#3c8dbc; font-weight:bold">
+                <a class="navbar-brand" href="{{ url('/admin') }}" style="border-radius:6px; padding:10px; color:white">
                     {{ config('app.name', 'Human Resource') }}
                 </a>
+                
+            <div class="container" >
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -58,7 +59,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="pull-right">wcr foundation for the lesser fortunate (just a tag)</li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -96,14 +97,11 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @include('prompts.messages')
             @yield('content')
         </main>
     </div>
-
-
     <script src="{{ asset('materialize-admin/js/materialize.js') }}"></script>
     <script src="{{ asset('materialize-admin/js/materialize.min.js') }}"></script>
     <script src="{{ asset('materialize-admin/js/materialize.custom-script.min.js') }}"></script>

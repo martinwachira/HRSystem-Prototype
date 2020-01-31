@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -25,7 +25,7 @@
 
 <br/>
 <div class="container">
-    <h1 style="margin-left: 250px"><a href="{{"admin"}}">Roles</a></h1>
+    <h1 style="margin-left: 250px"><a href="{{'admin'}}">Roles</a></h1>
 
     {!! Form::open(['action' => 'RolesController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
     @csrf
@@ -68,11 +68,12 @@
         @foreach($roles as $role)
 
             <tr>
-                <td>{{$role->role_name}}</td>
+           <td><a href="/roles/{{$role->id}}/edit" class="btn btn-default">{{$role->role_name}}</a></td>
+                <!-- <a href="/roles/{{$role->id}}/edit" class="btn btn-default"><h1 class="col-md-4">{{$role->role_name}}</h1></a> -->
 
                 <td><a style="color:green" href="/roles/{{$role['id']}}/edit" >
                         {!!Form::open(['onsubmit' => "return confirm('Do you really want to remove this skill?')",'action' => ['RolesController@destroy', $role['id']], 'method' => 'POST', 'class' => 'pull-right'])!!}
-                        <span class="ion-edit" > Edit</span></a>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                       
 
                     <span class="ion-alert">
                                     {{Form::hidden('_method', 'DELETE')}}

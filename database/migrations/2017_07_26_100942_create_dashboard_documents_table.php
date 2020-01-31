@@ -11,17 +11,17 @@ class CreateDashboardDocumentsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('dashboard_documents', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name', 100);
-            $table->string('description')->nullable();
-            $table->string('attachment', 100);
-            $table->timestamps();
-            $table->softDeletes();
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::create('dashboard_documents', function (Blueprint $table) {
+    //         $table->increments('id');
+    //         $table->string('name', 100);
+    //         $table->string('description')->nullable();
+    //         $table->string('attachment', 100);
+    //         $table->timestamps();
+    //         $table->softDeletes();
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

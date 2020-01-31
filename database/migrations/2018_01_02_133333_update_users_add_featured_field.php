@@ -11,12 +11,12 @@ class UpdateUsersAddFeaturedField extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::table('users', function (Blueprint $table) {
-            $table->boolean('featured')->default(0)->after('notes');
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::table('users', function (Blueprint $table) {
+    //         $table->boolean('featured')->default(0)->after('notes');
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

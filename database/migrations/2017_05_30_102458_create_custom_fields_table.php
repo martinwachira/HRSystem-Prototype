@@ -11,17 +11,17 @@ class CreateCustomFieldsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('custom_fields', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('key', 100);
-            $table->string('value');
-            $table->tinyInteger('type');
-            $table->string('category');
-            $table->timestamps();
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::create('custom_fields', function (Blueprint $table) {
+    //         $table->increments('id');
+    //         $table->string('key', 100);
+    //         $table->string('value');
+    //         $table->tinyInteger('type');
+    //         $table->string('category');
+    //         $table->timestamps();
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

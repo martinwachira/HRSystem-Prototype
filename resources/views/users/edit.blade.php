@@ -27,7 +27,7 @@
 <div class="card-body offset-md-3">
     {{--@section('content')--}}
     <h1  style="margin-left: 10px">Edit User</h1>
-    {!! Form::open(['action' => ['UsersController@update', $user['id']], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+    {!! Form::open(['action' => ['UsersController@update', $user->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
 
     <div class="form-group col-md-6">
 
@@ -41,19 +41,15 @@
         {{Form::date('birth_date', $user['birth_date'], ['class' => 'form-control'])}}
 
         {{Form::label('name', 'Role: ',['class'=>' col-form-label text-md-right'])}}
-        {{Form::text('role_name', $user['role_name'], ['class' => 'form-control'])}}
-        {{--<select name='id' class="form-control">--}}
-            {{--<option value="" selected="selected">Select A Role</option>--}}
-            {{--@foreach($roles as $id => $role)--}}
-                {{--<option value="{!! $id !!}">{!! $role->role !!}</option>--}}
-            {{--<option value="}">ttt</option>--}}
-            {{--@endforeach--}}
-        {{--</select>--}}
+        {{Form::text('gender', $user['gender'], ['class' => 'form-control'])}}
+      
+       
+        
     </div>
 
     {{Form::hidden('_method','PUT')}}
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    {{Form::submit('Edit', ['class'=>'btn btn-primary '])}}
+    <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+    {{Form::submit('Edit', ['class' => 'btn btn-primary '])}}
     {!! Form::close() !!}
     <a href="/users/show" class="btn btn-default">Go Back</a>
 </div>

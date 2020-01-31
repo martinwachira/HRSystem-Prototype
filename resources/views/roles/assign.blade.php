@@ -1,7 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
-<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -22,29 +20,27 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+
 <body>
-<br/>
 
-<div class="card-body offset-md-3">
+<div class="container">
+<h2>Assign roles</h2>
 
-    <h1  style="margin-left: 10px">Edit Skill</h1>
-    {!! Form::open(['action' => ['SkillsController@update', $skill['id']], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+{!! Form::open(['action' => 'RolesController@index', 'method' => 'GET', 'enctype' => 'multipart/form-data']) !!}
+    @csrf
 
-    <div class="form-group col-md-6">
-        {{Form::label('name', 'Skill Name: ',['class'=>' col-form-label text-md-right'])}}
-        {{Form::text('skill_name', $skill['skill_name'], ['class' => 'form-control'])}}
-    </div>
+@if(count($roles) > 0)
+        <select name="" id="" class="form-control">
+        @foreach($roles as $role)
+        <option value="">{{$role->role_name}}</option>
+        @endforeach
+        </select>
+        @else
+            <p>No roles found</p>
+    @endif  
+   
 
-    {{Form::hidden('_method','PUT')}}
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    {{Form::submit('Edit', ['class'=>'btn btn-primary '])}}
-    {!! Form::close() !!}
-<a href="/skills" class="btn btn-default">Go Back</a>
 </div>
-
 </body>
 </html>
 @endsection
-
-
-

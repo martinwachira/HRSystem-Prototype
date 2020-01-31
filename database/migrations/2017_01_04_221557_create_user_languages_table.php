@@ -11,22 +11,22 @@ class CreateUserLanguagesTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('user_languages', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('language_id')->unsigned();
-            $table->foreign('language_id')->references('id')->on('languages')
-                ->onDelete('cascade');
-            $table->tinyInteger('level');
-            $table->tinyInteger('skill');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')
-                ->onDelete('cascade');
-            $table->timestamps();
-            $table->softDeletes();
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::create('user_languages', function (Blueprint $table) {
+    //         $table->increments('id');
+    //         $table->integer('language_id')->unsigned();
+    //         $table->foreign('language_id')->references('id')->on('languages')
+    //             ->onDelete('cascade');
+    //         $table->tinyInteger('level');
+    //         $table->tinyInteger('skill');
+    //         $table->integer('user_id')->unsigned();
+    //         $table->foreign('user_id')->references('id')->on('users')
+    //             ->onDelete('cascade');
+    //         $table->timestamps();
+    //         $table->softDeletes();
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

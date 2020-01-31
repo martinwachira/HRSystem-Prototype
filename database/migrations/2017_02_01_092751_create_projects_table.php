@@ -11,21 +11,21 @@ class CreateProjectsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('projects', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name', 100);
-            $table->string('description');
-            $table->integer('client_id')->unsigned();
-            $table->foreign('client_id')
-                ->references('id')
-                ->on('clients')
-                ->onDelete('cascade');
-            $table->timestamps();
-            $table->softDeletes();
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::create('projects', function (Blueprint $table) {
+    //         $table->increments('id');
+    //         $table->string('name', 100);
+    //         $table->string('description');
+    //         $table->integer('client_id')->unsigned();
+    //         $table->foreign('client_id')
+    //             ->references('id')
+    //             ->on('clients')
+    //             ->onDelete('cascade');
+    //         $table->timestamps();
+    //         $table->softDeletes();
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

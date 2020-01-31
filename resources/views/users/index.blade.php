@@ -29,7 +29,8 @@
                     <div class="card-header">{{ __('Register') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('register') }}">
+                        {{--<form method="POST" action="{{ route('register') }}">--}}
+                            {!! Form::open(['action' => 'UsersController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                             @csrf
 
                             <div class="form-group row">
@@ -102,7 +103,7 @@
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Male') }}</label>
 
                                 <div>
-                                    <input id="male" type="radio" class="form-control{{ $errors->has('male') ? ' is-invalid' : '' }}" name="gender" value="m" required autofocus>
+                                    <input id="male" type="radio" class="form-control{{ $errors->has('male') ? ' is-invalid' : '' }}" name="gender" value="M" required autofocus>
                                     @if ($errors->has('male'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('male') }}</strong>
@@ -115,7 +116,7 @@
                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Female') }}</label>
 
                                 <div>
-                                    <input id="female" type="radio" class="form-control{{ $errors->has('female') ? ' is-invalid' : '' }}" name="gender" value="f" required autofocus>
+                                    <input id="female" type="radio" class="form-control{{ $errors->has('female') ? ' is-invalid' : '' }}" name="gender" value="F" required autofocus>
                                     @if ($errors->has('female'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('female') }}</strong>
@@ -148,9 +149,6 @@
                             </div>
                         </form>
                     </div>
-                   <div>
-                       dgdcvh
-                   </div>
                 </div>
             </div>
         </div>

@@ -38,7 +38,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;
     {{Form::submit('Edit', ['class'=>'btn btn-primary '])}}
     {!! Form::close() !!}
-    <a href="/skills" class="btn btn-default">Go Back</a>
+    <a href="/roles" class="btn btn-default">Go Back</a>
 </div>
 {{--@endsection--}}
 
