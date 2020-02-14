@@ -11,17 +11,17 @@ class CreateJobPositionsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('job_positions', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name', 100);
-            $table->string('description')->nullable();
-            $table->string('attachment', 100)->nullable();
-            $table->timestamps();
-            $table->softDeletes();
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::create('job_positions', function (Blueprint $table) {
+    //         $table->increments('id');
+    //         $table->string('name', 100);
+    //         $table->string('description')->nullable();
+    //         $table->string('attachment', 100)->nullable();
+    //         $table->timestamps();
+    //         $table->softDeletes();
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

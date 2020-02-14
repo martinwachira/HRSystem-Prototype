@@ -11,15 +11,15 @@ class CreateCompaniesTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('companies', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name', 100);
-            $table->timestamps();
-            $table->softDeletes();
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::create('companies', function (Blueprint $table) {
+    //         $table->increments('id');
+    //         $table->string('name', 100);
+    //         $table->timestamps();
+    //         $table->softDeletes();
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

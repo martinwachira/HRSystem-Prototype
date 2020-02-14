@@ -11,18 +11,18 @@ class CreateSocialMediaTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('user_social_media', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('url');
-            $table->tinyInteger('type');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
-            $table->softDeletes();
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::create('user_social_media', function (Blueprint $table) {
+    //         $table->increments('id');
+    //         $table->string('url');
+    //         $table->tinyInteger('type');
+    //         $table->integer('user_id')->unsigned();
+    //         $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+    //         $table->timestamps();
+    //         $table->softDeletes();
+    //     });
+    // }
 
     /**
      * Reverse the migrations.

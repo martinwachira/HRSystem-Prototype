@@ -43,6 +43,10 @@ Route::get('/leaves', function () {
     return view('leaves/index');
 });
 
+Route::get('/salaries', function () {
+    return view('salaries/index');
+});
+
 Route::get('/users/show', function (){
     $users = DB::table('users')
         ->join('roles_user','roles_user.user_id','=','users.id')
@@ -59,6 +63,7 @@ Route::resource('roles', 'RolesController');
 Route::resource('users','UsersController');
 Route::resource('employees','EmployeesController');
 Route::resource('leaves','LeavesController');
+Route::resource('salaries','SalariesController');
 
 Route::get('/skills', 'SkillsController@index');
 Route::get('/roles','RolesController@index');
@@ -77,6 +82,7 @@ Route::get('/employees/index','EmployeesController@index');
 Route::get('/employees/show','EmployeesController@getAll');
 Route::get('/leaves/index','LeavesController@index');
 Route::get('/leaves/show','LeavesController@getAll');
+Route::get('/salaries/index','SalariesController@index');
 
 
 

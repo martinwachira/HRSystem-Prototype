@@ -56,7 +56,7 @@
 
     <div class="col-md-2">
     <label for="">From</label>
-    <input type="date" name="startDate" id="beginDate" class="form-control" >
+    <input type="date" name="startDate" id="beginDate" class="form-control" onchange="cal()">
     </div>
 
     <div class="col-md-2">

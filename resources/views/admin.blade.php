@@ -359,15 +359,15 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">Modules</li>
-                <li class="active treeview">
+                <li class="treeview">
                     <a href="#">
-                        <i class="fa fa-dashboard"></i> <span>Payroll</span>
+                        <i class="ion ion-card"></i> <span>Payroll</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="active"><a href="index.html"><i class=""></i>Employee Salary</a></li>
+                        <li><a href="{{'salaries'}}"><i class=""></i>Employee Salary</a></li>
                         <li><a href="index2.html"><i class=""></i>Payslip</a></li>
                     </ul>
                 </li>
@@ -375,7 +375,7 @@
 
                     <a href="{{ 'users' }}">
 
-{{--                        <a href="{{ url('/register') }}">--}}
+                        {{--<a href="{{ url('/register') }}">--}}
                         <i class="fa fa-user-circle"></i>
                         <span>Users </span>
                         <span class="pull-right-container">
@@ -383,7 +383,7 @@
             </span>
                     </a>
                 </li>
-                <li>
+                <li class="">
                      <a href="{{'skills'}}">
                         <i class="fa fa-th"></i> <span>Skills</span>
                         <span class="pull-right-container">
@@ -447,7 +447,7 @@
                     </ul>
                 </li>
 
-                <li>
+                <li class="active">
                     <a href="pages/calendar.html">
                         <i class="fa fa-calendar"></i> <span>Calendar</span>
                         <span class="pull-right-container">
