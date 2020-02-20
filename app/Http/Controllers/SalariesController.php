@@ -4,77 +4,63 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Employees;
+use App\Salaries;
 Use DB;
 
 class SalariesController extends Controller
 {
     public function index()
     {
-        $employees = DB::table('employees')->get();
-        return view('salaries.index')->with('employees', $employees);
+        $employees = DB::table('employees')->pluck("empNames","id")->all();
+        $salary = Salaries::all();
+        return view('salaries.index', compact('employees', 'salary'));
+        // return view('salaries.index', compact('employees'));
+        // return view('salaries.index')->with('employees', $employees);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function create()
     {
-        //
+        // 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(Request $request, Salaries $salary)
     {
-        //
+        $data = $request->all();
+        $salary->fill($data)->save();
+
+        return redirect('/salaries')->with('success', 'Salary Added');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    //GET EMPLOYEES' SALARY ON ID SELECTED    
+    // public function getSalary($id){
+    //     {
+    //         $salaries = DB::table("salaries")
+    //             ->where("employee_id",$id)
+    //             ->pluck("gross", "id");
+    //         return json_encode($salaries);
+    //     }
+    // }
+  
     public function show($id)
     {
-        //
+        {
+            $salaries = DB::table("salaries")
+                ->where("employee_id",$id)
+                ->pluck("id","gross","net");
+            return json_encode($salaries);
+        }
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+  
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

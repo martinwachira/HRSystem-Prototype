@@ -4,7 +4,7 @@ function getBonus(){
     var bon = document.getElementById("bonus").value;
     var allw = document.getElementById("allowance").value;
     var totalBon = parseFloat(bon) + parseFloat(allw);
-    return parseInt(totalBon);
+    return parseFloat(totalBon);
 }
 
 function calc(){
@@ -14,9 +14,12 @@ function calc(){
 function getDeductions(){
     var nhif = document.getElementById("nhif").value;
     var nssf = document.getElementById("nssf").value;
-    var kra = document.getElementById("kra").value;
+    var t_gross = document.getElementById("gross").value;
+    var res_tax = (t_gross*20)/100;
+    document.getElementById('kra').value=res_tax;
+    var kra=res_tax; 
     var totalDed = parseFloat(nhif) + parseFloat(nssf) + parseFloat(kra);
-    return parseInt(totalDed);
+    return parseFloat(totalDed);
 }
 
 function calcDed(){
@@ -27,12 +30,15 @@ function getNet(){
     var gross = document.getElementById("gross").value;
     var totalGross = parseFloat(gross) + parseFloat(getBonus());
     var netCash = parseFloat(totalGross) - parseFloat(getDeductions());
-    return parseInt(netCash);
+    return parseFloat(netCash);
 }
 
 function calcNet(){
     document.getElementById("net").value=getNet();
 }
+
+// document.getElementById("net").value=getNet();
+
 
 
 

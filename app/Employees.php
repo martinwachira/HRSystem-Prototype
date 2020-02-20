@@ -16,4 +16,8 @@ class Employees extends Model
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function salary(){
+        return $this->hasOne('App\Employees');
+    }
 }

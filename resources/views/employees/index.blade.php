@@ -27,7 +27,7 @@
 <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                <H3 class="card-header ion ion-person-add"> &nbsp; {{ __('Create Employee Account') }}</h3>
+                <h3 class="card-header ion ion-person-add"> &nbsp; <a href="{{'employees/show'}}">Create Employee Account</a> </h3>
 
                     <div class="card-body">
                         {{--<form method="POST" action="{{ route('register') }}">--}}

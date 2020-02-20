@@ -29,36 +29,40 @@ class EmployeesController extends Controller
         return view('employees.show')->with('employees', $employees);
     }
 
-    public function store(Request $req)
+    public function store(Request $req, Employees $employee)
     {
-        $this->validate($req, [
-            'empNames' => 'required',
-            'email' => 'required',
-            'empNo' => 'required',
-            'nssf' => 'required',
-            'nhif' => 'required',
-            'kra' => 'required',
-            'department' => 'required',
-            'position' => 'required',
-            'password' => 'required',
-            'gender' => 'required',
-            'birth_date' => 'required',
-        ]);
+        $data = $req->all();
+        $employee->fill($data)->save();
 
-        $employee = new Employees();
-        $employee->empNames = $req->input('empNames');
-        $employee->email = $req->input('email');
-        $employee->empNo = $req->input('empNo');
-        $employee->nssf = $req->input('nssf');
-        $employee->nhif = $req->input('nhif');
-        $employee->kra = $req->input('kra');
-        $employee->department = $req->input('department');
-        $employee->position = $req->input('position');
-        $employee->grosspay = $req->input('grosspay');
-        $employee->password = $req->input('password');
-        $employee->gender = $req->input('gender');
-        $employee->birth_date = $req->input('birth_date');
-        $employee->save();
+        // $this->validate($req, [
+        //     'empNames' => 'required',
+        //     'email' => 'required',
+        //     'empNo' => 'required',
+        //     'nssf' => 'required',
+        //     'nhif' => 'required',
+        //     'kra' => 'required',
+        //     'department' => 'required',
+        //     'position' => 'required',
+        //     'password' => 'required',
+        //     'gender' => 'required',
+        //     'birth_date' => 'required',
+        // ]);
+
+        // $employee = new Employees();
+        // $employee->empNames = $req->input('empNames');
+        // $employee->email = $req->input('email');
+        // $employee->empNo = $req->input('empNo');
+        // $employee->nssf = $req->input('nssf');
+        // $employee->nhif = $req->input('nhif');
+        // $employee->kra = $req->input('kra');
+        // $employee->department = $req->input('department');
+        // $employee->position = $req->input('position');
+        // $employee->grosspay = $req->input('grosspay');
+        // $employee->password = $req->input('password');
+        // $employee->gender = $req->input('gender');
+        // $employee->birth_date = $req->input('birth_date');
+        // $employee->save();
+        
         return redirect('/employees/show')->with('success', 'Employee Account Created');
     }
 

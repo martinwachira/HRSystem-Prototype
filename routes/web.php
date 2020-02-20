@@ -75,7 +75,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@administrator')->name('administrator');
 Route::get('/skills', 'SkillsController@skills')->name('skills');
 Route::get('/roles', 'RolesController@roles')->name('roles');
-Route::get('/employees', 'EmployeesController@index')->name('employees');
+Route::get('/employees', 'EmployeesController@index')->name('employees.index');
 Route::get('/skills', 'SkillsController@index');
 Route::get('/roles','RolesController@index');
 Route::get('/employees/index','EmployeesController@index');
@@ -83,6 +83,11 @@ Route::get('/employees/show','EmployeesController@getAll');
 Route::get('/leaves/index','LeavesController@index');
 Route::get('/leaves/show','LeavesController@getAll');
 Route::get('/salaries/index','SalariesController@index');
+
+Route::get('/index',array('as'=>'index','uses'=>'SalariesController@index'));
+Route::get('/salaries/ajax/{id}',array('as'=>'salaries.ajax','uses'=>'SalariesController@show'));
+
+
 
 
 

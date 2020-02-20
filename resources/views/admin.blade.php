@@ -43,7 +43,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-purple sidebar-mini">
 <div class="wrapper">
 
     <header class="main-header">
@@ -467,7 +467,8 @@
         <section class="content-header">
             <h1>
                 Dashboard
-                <small>Control panel</small>
+                <!-- <small>Control panel</small> -->
+                <small>Panel</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
