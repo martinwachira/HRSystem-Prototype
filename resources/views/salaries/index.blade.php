@@ -159,7 +159,7 @@
 <table class="table table-striped">    
         <div class="row">            
         <tr>
-            <th>sal-id</th>
+            <th>Salary Idnt</th>
             <th>t-ben</th>
             <th>t-ded</th>
             <th>gross</th>
