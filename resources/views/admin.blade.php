@@ -513,14 +513,12 @@
                     <!-- small box -->
                     <div class="small-box bg-yellow">
                         <div class="inner">
-                            <!-- <h3 >{{ \App\Http\Controllers\auth\RegisterController::userCount() }}</h3> -->
-
-                            <!-- <p><a href="{{'users/show'}}">All Users</a></p> -->
+                            <p><a href="#">All Users</a></p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <!-- <a href="{{'users'}}" class="small-box-footer">Add Users <i class="ion ion-person-add"></i></a> -->
+                        <a href="#" class="small-box-footer">Add Users <i class="ion ion-person-add"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
