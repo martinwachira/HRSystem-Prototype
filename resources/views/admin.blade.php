@@ -513,7 +513,7 @@
                     <!-- small box -->
                     <div class="small-box bg-yellow">
                         <div class="inner">
-                            <h3 >{{ \App\Http\Controllers\auth\RegisterController::userCount() }}</h3>
+                            <!-- <h3 >{{ \App\Http\Controllers\auth\RegisterController::userCount() }}</h3> -->
 
                             <p><a href="{{'users/show'}}">All Users</a></p>
                         </div>
