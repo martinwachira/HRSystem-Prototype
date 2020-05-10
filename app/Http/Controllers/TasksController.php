@@ -15,8 +15,9 @@ class TasksController extends Controller
      */
     public function index()
     {
-        $tasks = DB::table('tasks')->get();
-        return view('tasks.index')->with('tasks', $tasks);
+        $priorities = DB::table('tasks')->distinct()->orderBy('id', 'asc')->pluck('priority');
+        $tasks = Tasks::orderBy('created_at','desc')->paginate(10);
+        return view('tasks.index', compact('priorities', 'tasks'));
     }
 
     /**
@@ -91,4 +92,10 @@ class TasksController extends Controller
         $counts = tasks::count();
         print($counts);
     }
+
+    public function summary(Request $request)
+    {
+        $priorities = DB::table('tasks')->distinct()->orderBy('priority', 'asc')->pluck('priority');
+    }
+
 }

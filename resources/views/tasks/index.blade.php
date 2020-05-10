@@ -28,7 +28,6 @@
 <div class="container">
 <div class="sub-cont">
 <div class="card"><h1 class="d-flex justify-content-center ion ion-grid">&nbsp;<strong> Tasks</strong></h1>
-<br>
 <div class="row t-title d-flex justify-content-center">
 <a href=""><button class="btn btn-info">New</button></a>&nbsp;&nbsp;
 <a href=""><button class="btn btn-warning">Pending</button></a>&nbsp;&nbsp;
@@ -81,6 +80,8 @@
     </div>
 </div>
 <hr>
+{!! Form::open(['action' => 'TasksController@index', 'method' => 'GET', 'enctype' => 'multipart/form-data']) !!}
+@csrf
 <div class="row">
     <div class="col-md-8">
         <h2>New Tasks</h2>
@@ -88,15 +89,20 @@
     <div class="col-md-2">
         <!-- <h3>Priority</h3> -->
     </div>
+   
     <div class="col-md-2">
-        <h3>Priority</h3>
+        <h3></h3>
+        <select name="priority" id="priority_select" class="form-control">
+            <option>Priority</option>
+            @foreach($priorities as $pr => $value)
+            <option value="{{$pr}}" data-pr="{{$pr}}">{{$value ? : ''}}</option>
+            @endforeach
+        </select>
     </div>
 </div>
 <hr>
-{!! Form::open(['action' => 'TasksController@index', 'method' => 'GET', 'enctype' => 'multipart/form-data']) !!}
-@csrf
 <div class="task_container">
-    <div class="row">
+    <div class="row" id="task_body">
         @if(count($tasks))    
         @foreach($tasks as $task)  
         <div class="col-md-8">
@@ -115,10 +121,13 @@
         @endif
         </div>
         @endforeach
-    </div>    
+    </div>  
+    {{$tasks->links()}}  
     @else
         <p>No new Tasks</p>
     @endif
+    
+    <!-- <input type="text" name="name" id="name" class="form-control" autocomplete="off" readonly>  -->
     
 </div>
 </div>
@@ -126,6 +135,8 @@
 
 </div>
 </div>
+
+<script src="{{ asset('js/tasks.js') }}"></script>
 </body>
 @endsection
 </html>

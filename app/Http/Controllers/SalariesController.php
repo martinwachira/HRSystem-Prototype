@@ -32,23 +32,12 @@ class SalariesController extends Controller
     }
 
     //GET EMPLOYEES' SALARY ON ID SELECTED    
-    // public function getSalary($id){
-    //     {
-    //         $salaries = DB::table("salaries")
-    //             ->where("employee_id",$id)
-    //             ->pluck("gross", "id");
-    //         return json_encode($salaries);
-    //     }
-    // }
-  
     public function show($id)
     {
-        {
-            $salaries = DB::table("salaries")
-                ->where("employee_id",$id)
-                ->pluck("id","gross","net");
-            return json_encode($salaries);
-        }
+        $salaries = DB::table("salaries")
+            ->where("employee_id",$id)
+            ->pluck("id","gross","net");
+        return json_encode($salaries);
     }
   
     public function edit($id)
