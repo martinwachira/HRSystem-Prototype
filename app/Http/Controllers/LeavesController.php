@@ -47,4 +47,10 @@ class LeavesController extends Controller
         $leave = Leave::find($id);
         return view('leaves.index')->with('leave', $leave);
     }
+
+    public static function leave_count()
+    {
+        $l_count = Leave::count();
+        print($l_count);
+    }
 }

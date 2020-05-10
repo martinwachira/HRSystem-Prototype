@@ -72,9 +72,11 @@
     <br>
     <div class="row">
     <div class="col-md-4">
+    <br>
     <h4 for="total"><strong>Total:</strong></h4>
     </div>
     <div class="col-md-8">
+    <br>
     <input type="text" id="total_benefit" class="form-control" name="total_benefits" placeholder="Total Benefits" onmouseleave="getBonus(this.value)">
     </div>
     </div> 
@@ -95,10 +97,12 @@
     <input type="text" class="form-control" name="kra" placeholder="kra" id="kra" onmouseleave="calcDed()">
     <br>
     <div class="row">
+    
     <div class="col-md-4">
+    <br>
     <h4 for="total"><strong>Total:</strong></h4>
-    </div>
-    <div class="col-md-8">
+    </div>    
+    <div class="col-md-8"><br>
     <input type="text" class="form-control" placeholder="Total Deductions" name="total_deductions" id="total_deduction" onmouseleave="getDeductions(this.value)">
     </div>
     </div> 

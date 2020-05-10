@@ -522,12 +522,13 @@
                     <div class="small-box bg-green">
                         <div class="inner">
                             <h3 >{{ \App\Http\Controllers\EmployeesController::employeesCount() }}</h3>
-                            <p><a href="{{'employees/show'}}" style="color:blanchedalmond">View Employees</a></p>
+
+                            <h4><strong>Employees</strong> </h4>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-stalker"></i>
                         </div>
-                        <a href="{{'employees'}}" class="small-box-footer">Create Account <i class="ion ion-person-add"></i></a>
+                        <a href="{{'employees/show'}}" class="small-box-footer">View Employees <i class="ion ion-search"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -535,14 +536,14 @@
                     <!-- small box -->
                     <div class="small-box bg-aqua">
                         <div class="inner">
-                            <h3 >{{ \App\Http\Controllers\SkillsController::skills_count() }}</h3>
+                            <h3 >{{ \App\Http\Controllers\LeavesController::leave_count() }}</h3>
                             
-                            <p> <a href="{{'skills'}}">View Skills</a></p>
+                            <h4><strong>Leaves</strong> </h4>
                         </div>
                         <div class="icon">
                             <i class="ion ion-load-b"></i>
                         </div>
-                        <a href="{{'skills'}}" class="small-box-footer">Skills <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="{{'leaves/show'}}" class="small-box-footer"View >View Leaves <i class="ion ion-stats-bars"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -552,12 +553,12 @@
                         <div class="inner">
                         <h3 >KES. {{ \App\Http\Controllers\SalariesController::calc_total_net() }} </h3>
 
-                            <p><a href="#">Total Salary Paid</a></p>
+                        <h4><strong>Salaries</strong> </h4>
                         </div>
                         <div class="icon">
                             <i class="ion ion-calculator"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Salaries <i class="ion ion-card"></i></a>
+                        <a href="{{'salaries'}}" class="small-box-footer">Total Salary Paid <i class="ion ion-card"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -567,12 +568,12 @@
                         <div class="inner">
                         <h3 >{{ \App\Http\Controllers\TasksController::task_count() }}</h3>
 
-                            <h4><strong><a href="{{'/tasks'}}">Tasks</a></strong> </h4>
+                            <h4><strong>Tasks</strong> </h4>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="{{'/tasks'}}" class="small-box-footer">All tasks <i class="ion ion-network"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
