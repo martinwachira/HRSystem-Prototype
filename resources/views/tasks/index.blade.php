@@ -29,7 +29,7 @@
 <div class="sub-cont">
 <div class="card"><h1 class="d-flex justify-content-center ion ion-grid">&nbsp;<strong> Tasks</strong></h1>
 <div class="row t-title d-flex justify-content-center">
-<a href=""><button class="btn btn-info">New</button></a>&nbsp;&nbsp;
+<a href=""><button class="btn btn-primary">New</button></a>&nbsp;&nbsp;
 <a href=""><button class="btn btn-warning">Pending</button></a>&nbsp;&nbsp;
 <a href=""><button class="btn btn-success">Finished</button></a>&nbsp;
 </div>
@@ -109,7 +109,7 @@
            <a href=""> <h4><span class="ion ion-toggle"> {{ $task->task_name}} </span> </h4></a>
         </div>
         <div class="col-md-2">
-        <h4 class="dte">{{ date('F j', strtotime($task->created_at)) }}</h4>
+        <h4 class="dte"><small>{{ date('F j', strtotime($task->created_at)) }}</small></h4>
         </div>
         <div class="col-md-2 float-right">
         @if($task->priority == 'Low' )
