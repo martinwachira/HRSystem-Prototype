@@ -359,83 +359,120 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">Modules</li>
+
                 <li class="treeview">
-                    <a href="#">
-                        <i class="ion ion-card"></i> <span>Payroll</span>
-                        <span class="pull-right-container">
+                <a href="{{ 'users' }}">
+                <i class="fa fa-user-circle"></i>
+                <span>Account Creation</span>
+                <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{'salaries'}}"><i class=""></i>Employee Salary</a></li>
-                        <li><a href="index2.html"><i class=""></i>Payslip</a></li>
-                    </ul>
+                <li>
+                    <a href="{{ 'users' }}">
+                    {{--<a href="{{ url('/register') }}">--}}
+                    <span><h4>Users </h4></span>
+                    <span class="pull-right-container">
+                    <span class="fa fa-edit"></span>
+                </span>
+                    </a>
                 </li>
                 <li>
-
-                    <a href="{{ 'users' }}">
-
-                        {{--<a href="{{ url('/register') }}">--}}
-                        <i class="fa fa-user-circle"></i>
-                        <span>Users </span>
-                        <span class="pull-right-container">
-              <span class="fa fa-edit"></span>
-            </span>
+                    <a href="{{ '/employees' }}">
+                    {{--<a href="{{ url('/employees') }}">--}}
+                    <span><h4>Employee </h4></span>
+                    <span class="pull-right-container">
+                    <i class="ion ion-person-add"></i>
+                </span>
                     </a>
                 </li>
-                <li class="">
-                     <a href="{{'skills'}}">
-                        <i class="fa fa-th"></i> <span>Skills</span>
-                        <span class="pull-right-container">
-            </span>
-                    </a>
-                </li>
-                <li class="treeview">
+            </ul>
+            </li>
+
+            <li class="treeview">
                     <a href="#">
                         <i class="fa fa-user"></i>
                         <span>Employees</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="{{'employees/show'}}"><i class=""></i> All Employees</a></li>
-                        <li><a href="{{'leaves'}}"><i class=""></i>Leave Requests</a></li>
-                        <li><a href="{{'leaves/show'}}"><i class=""></i>Review Leave Requests</a></li>
+                        <li><a href="{{'employees/show'}}"><i class=""></i><h4> All Employees</h4></a></li>
+                        <li><a href="{{'leaves'}}"><i class=""></i><h4>Leave Requests</h4></a></li>
+                        <li><a href="{{'leaves/show'}}"><i class=""></i><h4>Review Leave Requests</h4></a></li>
                     </ul>
                 </li>
+
+                <li class="treeview">
+                    <a href="#">
+                        <i class="ion ion-card"></i> <span>Payroll</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{'salaries'}}"><i class=""></i><h4>Employee Salary</h4></a></li>
+                        <li><a href="index2.html"><i class=""></i><h4>Payslip</h4></a></li>
+                    </ul>
+                </li>                
+
+                <li class="treeview">
+                    <a href="#">
+                    <i class="ion ion-stats-bars"></i>
+                        <span>Tasks</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                        <a href="{{'tasks'}}"><i class=""></i><h4>Create Tasks</h4>
+                        </a></li>
+                        <li><a href="{{''}}"><i class=""></i><h4>View Tasks</h4></a></li>
+                    </ul>
+                </li>
+
+                <li class="">
+                     <a href="{{'skills'}}">
+                        <i class="fa fa-th"></i> <span>Skills</span>
+                        <span class="pull-right-container">
+                </span>
+                    </a>
+                </li>
+                
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-laptop"></i>
                         <span>Roles</span>
                         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                </span>
                     </a>
                     <ul class="treeview-menu">
                         <li>
-                        <a href="{{'roles'}}"><i class=""></i>Create Roles
-                        &nbsp;
-                        <small class="label pull-right bg-green">Add</small>
+                        <a href="{{'roles'}}"><i class=""></i><h4>Create Roles
+                        <small class="label pull-right bg-green">Add</small></h4>
                         </a></li>
-                        <li><a href="{{'/roles/assign'}}"><i class=""></i>Assign Roles</a></li>
+                        <li><a href="{{'/roles/assign'}}"><i class=""></i><h4>Assign Roles</h4></a></li>
                     </ul>
-                </li>
+                </li>                
 
-                <li class="treeview">
+                <!-- <li class="treeview">
                     <a href="#">
                         <i class="ion ion-stats-bars"></i>
                         <span>Tasks</span>
                         </span>
                     </a>
-                </li>
+                </li> -->
 
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-bank"></i> <span>Accounts</span>
                         <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </span>
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="pages/forms/general.html"><i class=" "></i>Estimates</a></li>

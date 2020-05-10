@@ -64,9 +64,11 @@ Route::resource('users','UsersController');
 Route::resource('employees','EmployeesController');
 Route::resource('leaves','LeavesController');
 Route::resource('salaries','SalariesController');
+ROute::resource('tasks', 'TasksController');
 
 Route::get('/skills', 'SkillsController@index');
 Route::get('/roles','RolesController@index');
+Route::get('/tasks','TasksController@index');
 Route::get('/roles/assign','RolesController@assign');
 
 Auth::routes();
