@@ -37,6 +37,7 @@
 </div>
 <br>
 <div class="card">
+<div class="container">
 <div class="row c-head">
     <div class="col-md-6">
 <!-- Button trigger modal -->
@@ -58,8 +59,8 @@
       {!! Form::open(['action' => 'TasksController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
        @csrf
       <div class="modal-body">
-        <input type="text" class="form-control" name="task_name" placeholder="Task Name"><br>
-        <select name="priority" id="" class="form-control">
+        <input type="text" class="form-control" name="task_name" placeholder="Task Name" required><br>
+        <select name="priority" id="" class="form-control" required>
             <option value="">Priority</option>
             <option value="High">High</option>
             <option value="Medium">Medium</option>
@@ -80,6 +81,47 @@
     </div>
 </div>
 <hr>
+<div class="row">
+    <div class="col-md-8">
+        <h2>New Tasks</h2>
+    </div>
+    <div class="col-md-2">
+        <!-- <h3>Priority</h3> -->
+    </div>
+    <div class="col-md-2">
+        <h3>Priority</h3>
+    </div>
+</div>
+<hr>
+{!! Form::open(['action' => 'TasksController@index', 'method' => 'GET', 'enctype' => 'multipart/form-data']) !!}
+@csrf
+<div class="task_container">
+    <div class="row">
+        @if(count($tasks))    
+        @foreach($tasks as $task)  
+        <div class="col-md-8">
+           <a href=""> <h4><span class="ion ion-toggle"> {{ $task->task_name}} </span> </h4></a>
+        </div>
+        <div class="col-md-2">
+        <h4 class="dte">{{ date('F j', strtotime($task->created_at)) }}</h4>
+        </div>
+        <div class="col-md-2 float-right">
+        @if($task->priority == 'Low' )
+        <h4><span class="badge badge-pill badge-primary">{{$task->priority}}</span></h4> 
+        @elseif($task->priority == 'Medium')      
+        <h4><span class="badge badge-pill badge-warning">{{$task->priority}}</span></h4>
+        @else
+        <h4><span class="badge badge-pill badge-danger">{{$task->priority}}</span></h4>
+        @endif
+        </div>
+        @endforeach
+    </div>    
+    @else
+        <p>No new Tasks</p>
+    @endif
+    
+</div>
+</div>
 </div>
 
 </div>

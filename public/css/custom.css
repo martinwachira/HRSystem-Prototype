@@ -8,3 +8,11 @@ a:hover{
 .c-head{
    padding: 20px 20px 0px 20px;
 }
+
+.task_container{
+   color: #607373;
+}
+
+.dte{
+   color: #F7CC46;
+}
