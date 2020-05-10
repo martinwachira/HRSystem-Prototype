@@ -15,8 +15,9 @@ class TasksController extends Controller
      */
     public function index()
     {
-        $priorities = DB::table('tasks')->distinct()->orderBy('created_at', 'desc')->pluck('priority');
+        $priorities = Tasks::orderBy('created_at','desc')->distinct()->pluck('priority');
         $tasks = Tasks::orderBy('created_at','desc')->paginate(10);
+        // $tasks = Tasks::all()->paginate(10);
         return view('tasks.index', compact('priorities', 'tasks'));
     }
 
