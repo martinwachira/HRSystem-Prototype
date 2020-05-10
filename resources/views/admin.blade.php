@@ -550,12 +550,14 @@
                     <!-- small box -->
                     <div class="small-box bg-yellow">
                         <div class="inner">
-                            <p><a href="#">All Users</a></p>
+                        <h3 >KES. {{ \App\Http\Controllers\SalariesController::calc_total_net() }} </h3>
+
+                            <p><a href="#">Total Salary Paid</a></p>
                         </div>
                         <div class="icon">
-                            <i class="ion ion-person-add"></i>
+                            <i class="ion ion-calculator"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Add Users <i class="ion ion-person-add"></i></a>
+                        <a href="#" class="small-box-footer">Salaries <i class="ion ion-card"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -563,9 +565,9 @@
                     <!-- small box -->
                     <div class="small-box bg-red">
                         <div class="inner">
-                            <h3>65</h3>
+                        <h3 >{{ \App\Http\Controllers\TasksController::task_count() }}</h3>
 
-                            <p>Timing Sheet</p>
+                            <h4><strong><a href="{{'/tasks'}}">Tasks</a></strong> </h4>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>

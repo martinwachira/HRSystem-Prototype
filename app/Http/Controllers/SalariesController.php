@@ -65,4 +65,9 @@ class SalariesController extends Controller
     {
         //
     }
+
+    public static function calc_total_net(){
+        $total_net = Salaries::sum("net");
+        print($total_net);
+    }
 }

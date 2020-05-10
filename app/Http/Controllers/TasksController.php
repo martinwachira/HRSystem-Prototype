@@ -84,4 +84,9 @@ class TasksController extends Controller
     {
         //
     }
+
+    public static function task_count(){
+        $counts = tasks::count();
+        print($counts);
+    }
 }
