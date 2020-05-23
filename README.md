@@ -8,7 +8,9 @@
 ![alt text](https://user-images.githubusercontent.com/60017194/82737056-b9d8a800-9d36-11ea-915e-201904bdeef3.png "app dashboard")
 
 
-> Res: Bootstrap 4.0 | Laravel 5 | admin-lte 2.4:
-> Comprises some of the crucial HR modules:
-_Human Resource Prototype_
+> Res: Bootstrap 4.0 | Laravel 5 | admin-lte 2.4
+
+> Comprises some of the crucial HR modules
+
+***Human Resource Prototype***
 
