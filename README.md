@@ -14,3 +14,5 @@
 
 ***Human Resource Prototype***
 
+Visit app on [HR Prototype App by WCR](https://hr-proto.herokuapp.com/) for more
+
