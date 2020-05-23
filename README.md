@@ -12,7 +12,7 @@
 
 > Comprises some of the crucial HR modules
 
-***Human Resource Prototype***
+Human Resource Prototype
 
 Visit app on [HR Prototype App by WCR](https://hr-proto.herokuapp.com/) for more
 
