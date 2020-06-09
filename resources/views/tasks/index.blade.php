@@ -87,7 +87,7 @@
         <h2>New Tasks</h2>
     </div>
     <div class="col-md-2">
-        <!-- <h3>Priority</h3> -->
+        <!-- <h3>Date updated</h3> -->
     </div>
    
     <div class="col-md-2">
@@ -95,7 +95,7 @@
         <select name="priority" id="priority_select" class="form-control">
             <option>Priority</option>
             @foreach($priorities as $pr => $value)
-            <option value="{{$pr}}" data-pr="{{$pr}}">{{$value ? : ''}}</option>
+            <option id="tValue" value="{{$pr}}" data-pr="{{$value}}">{{$value ? : ''}}</option>
             @endforeach
         </select>
     </div>
@@ -122,6 +122,7 @@
         </div>
         @endforeach
     </div>  
+    <!-- <input id="tas" type="text" value="priority"> -->
     {{$tasks->links()}}  
     @else
         <p>No new Tasks</p>
