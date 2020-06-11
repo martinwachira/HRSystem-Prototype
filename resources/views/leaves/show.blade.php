@@ -31,8 +31,6 @@
      {!! Form::open(['action' => 'LeavesController@index', 'method' => 'GET', 'enctype' => 'multipart/form-data']) !!}
      @csrf
      <br>
-                    {!! Form::open(['action' => 'LeavesController@index', 'method' => 'GET', 'enctype' => 'multipart/form-data']) !!}
-                    @csrf
                     <div class="row btn-success" style="border-radius:7px; padding:7px">
                     <div class="col-md-2">Names</div>
                     <div class="col-md-2">Leave Commence Date</div>

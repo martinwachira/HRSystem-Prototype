@@ -106,7 +106,7 @@
         @if(count($tasks))    
         @foreach($tasks as $task)  
         <div class="col-md-8">
-           <a href=""> <h4><span class="ion ion-toggle"> {{ $task->task_name}} </span> </h4></a>
+           <a href="/tasks/{{$task->id}}/edit"> <h4><span class="ion ion-toggle"> {{ $task->task_name}} </span> </h4></a>
         </div>
         <div class="col-md-2">
         <h4 class="dte"><small>{{ date('F j', strtotime($task->created_at)) }}</small></h4>

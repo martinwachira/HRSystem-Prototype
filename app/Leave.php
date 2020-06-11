@@ -9,7 +9,7 @@ class Leave extends Model
     //
     protected $fillable = [
         //        'name', 'email', 'password',
-        'empNames'
+        'empNames', 'holiday', 'days', 'startDate', 'stopDate', 'reason',
     ];
 
     public $primaryKey = 'id';
