@@ -43,7 +43,7 @@
 
 <div class="task_container">
     <br>
-   {{$task->id}}   
+   {{$task->task_name}}   
 </div>
 </div>
 </div>
