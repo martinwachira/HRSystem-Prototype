@@ -17,8 +17,10 @@ class TasksController extends Controller
     {
         $priorities = DB::table('tasks')->distinct()->pluck('priority');
         $tasks = Tasks::orderBy('created_at','desc')->paginate(10);
-        // $tasks = Tasks::all()->paginate(10);
+        
         return view('tasks.index', compact('priorities', 'tasks'));
+        // $tasks = Tasks::all()->paginate(10);
+        // return view('tasks.index')->with('tasks', $tasks);
     }
 
     /**
@@ -74,9 +76,13 @@ class TasksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Task $task)
     {
         //
+        $data = $request->all();
+        $task->fill($data)->save();
+
+        return redirect('/tasks')->with('success', 'Task Updated');
     }
 
     /**

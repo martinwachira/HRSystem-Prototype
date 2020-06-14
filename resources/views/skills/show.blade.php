@@ -45,7 +45,7 @@
             {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
             {!!Form::close()!!}
     {{--@endif--}}
-        {{--@endif--}}
+    {{--@endif--}}
 
 </div>
 

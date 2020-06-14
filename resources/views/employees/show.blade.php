@@ -25,7 +25,7 @@
 <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <h4 class="card-header ion ion-person" style="font-family:sans-serif"> &nbsp; <a href="{{'/employees'}}">View Accounts</a></h4>
+                    <h4 class="card-header ion ion-person-add" style="font-family:sans-serif"> &nbsp; <a href="{{'/employees'}}">Create Account Here</a></h4>
                     </div>
                     <br>
                     {!! Form::open(['action' => 'EmployeesController@index', 'method' => 'GET', 'enctype' => 'multipart/form-data']) !!}

@@ -6,7 +6,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -27,7 +26,7 @@
 <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                <h3 class="card-header ion ion-person-add"> &nbsp; <a href="{{'employees/show'}}">Create Employee Account</a> </h3>
+                <h4 class="card-header ion ion-person" style="font-family:sans-serif"> &nbsp; <a href="{{'employees/show'}}">View Registered Accounts</a> </h4>
 
                     <div class="card-body">
                         {{--<form method="POST" action="{{ route('register') }}">--}}

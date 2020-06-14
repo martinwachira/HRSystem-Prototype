@@ -67,7 +67,6 @@
         </select>
       </div>
       <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-secondary d-flex justify-content-left" data-dismiss="modal" >Close</button> -->
         <button type="submit" class="btn btn-primary">Save changes</button>
       </div>
 </form>
@@ -136,7 +135,6 @@
 
 </div>
 </div>
-
 <script src="{{ asset('js/tasks.js') }}"></script>
 </body>
 @endsection
